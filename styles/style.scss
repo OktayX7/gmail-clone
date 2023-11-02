@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "variables";
+@import "modules";
+@import "modal";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto";
+  background: #f6f8fc;
+}
+
+//! Top Section
+
+header {
+  @extend .between;
+  gap: 20px;
+  font-size: 21px;
+  padding: 20px;
+  //   left section
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i {
+      font-size: 27px;
+    }
+    img {
+      width: 50px;
+      margin-left: 10px;
+    }
+  }
+  //   middle section
+  .middle {
+    form {
+      display: flex;
+      background: rgb(243, 243, 243);
+      padding: 6px 9px;
+      gap: 10px;
+      border-radius: 10px;
+
+      input {
+        border: none;
+        outline: none;
+        font-size: 18px;
+        background: transparent;
+      }
+    }
+    @media (max-width: 780px) {
+      display: none;
+    }
+  }
+  //   right section
+  .right {
+    @extend .between;
+    gap: 15px;
+    i {
+      @extend .icon;
+    }
+    img {
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+//! Main Section
+main {
+  display: flex;
+  gap: 20px;
+  //   Navigation
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 40px;
+    .create {
+      background: $light-blue;
+      border-radius: 15px;
+      padding: 10px;
+      display: flex;
+      gap: 20px;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      &:hover {
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+    ul {
+      display: grid;
+      font-size: 16px;
+      li {
+        padding: 8px;
+        margin-left: 4px;
+        display: flex;
+        gap: 12px;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+        transition: background 0.3s;
+        &:hover {
+          background: $light-blue;
+        }
+      }
+    }
+    .active {
+      background: $light-blue;
+    }
+    .bottom {
+      margin-left: 12px;
+      cursor: pointer;
+    }
+  }
+  .hide {
+    span {
+      display: none;
+    }
+  }
+  //   Content Section
+  section {
+    flex-grow: 1;
+    .top {
+      background: white;
+      border-radius: 10px 10px 0 0;
+      padding: 8px 16px;
+      @extend .between;
+      i {
+        @extend .icon;
+      }
+      .left {
+        display: flex;
+        gap: 10px;
+      }
+      .right {
+        @extend .between;
+        gap: 10px;
+      }
+    }
+    .mails {
+      background: $gray;
+      height: 80vh;
+      .mail {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: 1fr 3fr 1fr;
+        font-size: 16px;
+        padding: 10px;
+        border-bottom: 1px solid white;
+        column-gap: 5px;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 0 30px rgba(128, 128, 128, 0.408);
+        }
+        .info {
+          display: flex;
+          gap: 6px;
+          .bi-star-fill {
+            color: $yellow;
+          }
+        }
+        .content {
+          display: flex;
+          .title {
+            font-weight: bold;
+          }
+
+          .title,
+          .text {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+        .time {
+          text-align: end;
+          white-space: nowrap;
+        }
+
+        // sağ kısım
+        .delete-mail-btn {
+          display: none;
+          border: none;
+          background: none;
+          font-size: 15px;
+          cursor: pointer;
+          text-align: end;
+          &:hover {
+            color: red;
+          }
+        }
+
+        &:hover > .time {
+          display: none;
+        }
+
+        &:hover > .delete-mail-btn {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  //  Right Section
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    span {
+      background: $dark-gray;
+      width: 100%;
+      height: 2px;
+    }
+    img {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      @extend .icon;
+    }
+    @media (max-width: 750px) {
+      display: none;
+    }
+  }
+}

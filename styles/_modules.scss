@@ -1,0 +1,20 @@
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  padding: 3px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #d8dbdd;
+  }
+}

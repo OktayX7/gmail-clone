@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fav icon -->
+    <link
+      rel="shortcut icon"
+      href="assets/gmail-logo.png"
+      type="image/x-icon"
+      width="16px"
+      height="16px"
+    />
+
+    <!------------ css ------------>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!------------ bootstrap icons ------------>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <title>Gmail</title>
+  </head>
+  <body>
+    <!------------------------------------ header section ------------------------------------>
+    <header>
+      <!------------ left section ------------>
+      <div class="left">
+        <div id="hamburger-menu" class="icon">
+          <i class="bi bi-list"></i>
+        </div>
+        <img src="assets/gmail-logo.png" alt="" />
+        <span>Gmail</span>
+      </div>
+      <!------------ middle section ------------>
+      <div class="middle">
+        <form>
+          <div class="icon">
+            <i class="bi bi-search"></i>
+          </div>
+          <input id="search-mail-input" type="text" placeholder="Mail ara..." />
+        </form>
+      </div>
+      <!------------ right section ------------>
+      <div class="right">
+        <i class="bi bi-question-circle"></i>
+        <i class="bi bi-gear"></i>
+        <i class="bi bi-menu-button-wide-fill"></i>
+        <img src="assets/user-picture.jpeg" alt="" />
+      </div>
+    </header>
+    <!--------------------------------------- main section ------------------------------------>
+    <main>
+      <!--------------------- left navigation ---------------------->
+      <nav>
+        <!------ nav top section ------->
+        <div class="create">
+          <i class="bi bi-pencil"></i>
+          <span>Oluştur</span>
+        </div>
+        <!------ nav list section ------->
+        <ul id="nav-list"></ul>
+        <!------ nav bottom section ------->
+        <div class="bottom">
+          <span>Kategoriler</span>
+          <i class="bi bi-plus"></i>
+        </div>
+      </nav>
+      <!------------------------ middle section ------------------------>
+      <section>
+        <!-- top bar -->
+        <div class="top">
+          <div class="left">
+            <input type="checkbox" />
+            <i class="bi bi-arrow-counterclockwise"></i>
+            <i class="bi bi-three-dots-vertical"></i>
+          </div>
+          <div class="right">
+            <p>1-50 of 94</p>
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+        <!-- mail list -->
+        <div class="mails"></div>
+      </section>
+      <!------------------------ right section ------------------------>
+      <aside>
+        <img src="assets/calendar-48.png" />
+        <img src="assets/keep-48.png" />
+        <img src="assets/task-48.png" />
+        <img src="assets/account-48.png" />
+        <span> </span>
+        <i class="bi bi-plus-lg icon"></i>
+      </aside>
+    </main>
+    <!--------------------------------------- modal ------------------------------------>
+    <div class="outlet">
+      <div class="modal-wrapper">
+        <form class="modal">
+          <div class="header">
+            <h5>Yeni İleti</h5>
+            <div>
+              <button type="button" class="modal-close-btn">
+                <span>x</span>
+              </button>
+            </div>
+          </div>
+          <input name="receiver" type="text" placeholder="Kime" />
+          <input name="title" type="text" placeholder="Konu" />
+          <textarea name="message"></textarea>
+          <button type="submit" class="send">Gönder</button>
+        </form>
+      </div>
+    </div>
+    <!-- birden fazla js dosyası kullanmak için type="module" eklemek gerekiyor -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

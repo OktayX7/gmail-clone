@@ -1,0 +1,79 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: black, $alpha: 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  .modal {
+    background-color: white;
+    width: 80%;
+    max-width: 700px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0 0;
+      font-size: 20px;
+      h5 {
+        font-size: 17px;
+        font-weight: 900;
+      }
+      button {
+        border: none;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.3s;
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      margin: 0 6px;
+    }
+    textarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 16px;
+      resize: none;
+      border-radius: 10px;
+    }
+    .send {
+      width: 180px;
+      padding: 14px;
+      border-radius: 20px;
+      background: #1b61d1;
+      color: white;
+      margin: 10px auto;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      &:hover {
+        background: #0353d3;
+      }
+    }
+  }
+}
