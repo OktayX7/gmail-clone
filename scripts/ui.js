@@ -58,7 +58,9 @@ export function renderMails(mailData, parentElement) {
        
             <p class="time">${mail.date}</p>
             
-            <button name="delete-mail-btn" class="delete-mail-btn" data-id="${mail.id}">Sil</button>
+            <button name="delete-mail-btn" class="delete-mail-btn" data-id="${
+              mail.id
+            }">Sil</button>
           </div> 
   `
   );

@@ -90,17 +90,26 @@ el.mails.addEventListener("click", (e) => {
   }
 });
 
+let timer;
+
+const searchMails = (searchValue) => {
+  timer = setTimeout(() => {
+    const filteredMails = newMailData.filter((mail) => {
+      return (
+        mail.sender.toLowerCase().includes(searchValue) ||
+        mail.title.toLowerCase().includes(searchValue) ||
+        mail.message.toLowerCase().includes(searchValue)
+      );
+    });
+
+    renderMails(filteredMails, el.mails);
+  }, 400);
+};
+
 // Search Mail Input Event Listener
 el.searchMailInput.addEventListener("input", (e) => {
   const searchValue = e.target.value.toLowerCase();
 
-  const filteredMails = newMailData.filter((mail) => {
-    return (
-      mail.sender.toLowerCase().includes(searchValue) ||
-      mail.title.toLowerCase().includes(searchValue) ||
-      mail.message.toLowerCase().includes(searchValue)
-    );
-  });
-
-  renderMails(filteredMails, el.mails);
+  clearTimeout(timer);
+  searchMails(searchValue);
 });
